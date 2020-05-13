@@ -1,0 +1,12 @@
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\WcfRestService.dll.config
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\WcfRestService.dll
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\WcfRestService.pdb
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\EntityFramework.dll
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\EntityFramework.SqlServer.dll
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\EntityFramework.xml
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\bin\EntityFramework.SqlServer.xml
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\obj\Debug\WcfRestService.csprojAssemblyReference.cache
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\obj\Debug\WcfRestService.csproj.CoreCompileInputs.cache
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\obj\Debug\WcfRestService.csproj.CopyComplete
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\obj\Debug\WcfRestService.dll
+C:\Users\EK\Documents\GitHub\WCFRest-Delphi\WCF Service\WcfRestService\WcfRestService\obj\Debug\WcfRestService.pdb
