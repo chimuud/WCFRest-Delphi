@@ -4,9 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FamilyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'Family.dbo.Members' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+    <Schema Namespace="FamilyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Members">
           <Key>
             <PropertyRef Name="ID" />
@@ -19,19 +17,9 @@ warning 6002: The table/view 'Family.dbo.Members' does not have a primary key de
           <Property Name="Picture" Type="varbinary(max)" />
         </EntityType>
         <EntityContainer Name="FamilyModelStoreContainer">
-          <EntitySet Name="Members" EntityType="Self.Members" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [Members].[ID] AS [ID], 
-    [Members].[FirstName] AS [FirstName], 
-    [Members].[MiddleName] AS [MiddleName], 
-    [Members].[LastName] AS [LastName], 
-    [Members].[Age] AS [Age], 
-    [Members].[Picture] AS [Picture]
-    FROM [dbo].[Members] AS [Members]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="Members" EntityType="Self.Members" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FamilyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -43,8 +31,8 @@ warning 6002: The table/view 'Family.dbo.Members' does not have a primary key de
           <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="String" Nullable="true" />
-          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Private" />
+          <Property Name="Age" Type="String" Nullable="true" MaxLength="20" Unicode="true" FixedLength="false" />
+          <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Public" />
         </EntityType>
         <EntityContainer Name="FamilyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Members" EntityType="Self.Member" />

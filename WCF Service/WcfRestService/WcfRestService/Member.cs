@@ -11,22 +11,14 @@ namespace WcfRestService
 {
     using System;
     using System.Collections.Generic;
-    using System.Runtime.Serialization;
-
-    [DataContract]
+    
     public partial class Member
     {
-        [DataMember]
         public int ID { get; set; }
-        [DataMember]
         public string FirstName { get; set; }
-        [DataMember]
         public string MiddleName { get; set; }
-        [DataMember]
         public string LastName { get; set; }
-        [DataMember]
         public string Age { get; set; }
-        [DataMember]
-        private byte[] Picture { get; set; }
+        public byte[] Picture { get; set; }
     }
 }

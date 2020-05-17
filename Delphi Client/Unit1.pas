@@ -49,10 +49,28 @@ type
     edAge: TEdit;
     Label10: TLabel;
     btnPost: TButton;
+    GroupBox5: TGroupBox;
+    Label11: TLabel;
+    Label12: TLabel;
+    Label13: TLabel;
+    Label14: TLabel;
+    edPutFName: TEdit;
+    edPutMName: TEdit;
+    edPutLName: TEdit;
+    edPutAge: TEdit;
+    btnPut: TButton;
+    edPutID: TEdit;
+    Label15: TLabel;
+    GroupBox6: TGroupBox;
+    Label16: TLabel;
+    edDelID: TEdit;
+    btnDel: TButton;
     procedure btnGetMemberClick(Sender: TObject);
     procedure btnGetListClick(Sender: TObject);
     procedure btnGetMemberByNameClick(Sender: TObject);
     procedure btnPostClick(Sender: TObject);
+    procedure btnPutClick(Sender: TObject);
+    procedure btnDelClick(Sender: TObject);
   private
     WCFRest: TWCFRest;
     { Private declarations }
@@ -71,8 +89,6 @@ uses
 {$R *.dfm}
 
 procedure TForm1.btnGetListClick(Sender: TObject);
-var
-  params: TDictionary<string, Variant>;
 begin
   WCFRest := TWCFRest.Create(edURL.Text);
   try
@@ -84,34 +100,26 @@ begin
 end;
 
 procedure TForm1.btnGetMemberClick(Sender: TObject);
-var
-  params: TDictionary<string, Variant>;
 begin
   WCFRest := TWCFRest.Create(edURL.Text);
-  params := TDictionary<string, Variant>.Create;
   try
-    params.Add('ID', SpinEdit1.Value);
-    mmResponse.Text := WCFRest.Get('GetMember', params);
+    WCFRest.Params.Add('ID', SpinEdit1.Value);
+    mmResponse.Text := WCFRest.Get('GetMember');
     mmRequest.Text := WCFRest.RequestText;
   finally
-    params.Free;
     WCFRest.Free;
   end;
 end;
 
 procedure TForm1.btnGetMemberByNameClick(Sender: TObject);
-var
-  params: TDictionary<string, Variant>;
 begin
   WCFRest := TWCFRest.Create(edURL.Text);
-  params := TDictionary<string, Variant>.Create;
   try
-    params.Add('FirstName', edFirstName.Text);
-    params.Add('LastName', edLastName.Text);
-    mmResponse.Text := WCFRest.Get('GetMemberByName', params);
+    WCFRest.Params.Add('FirstName', edFirstName.Text);
+    WCFRest.Params.Add('LastName', edLastName.Text);
+    mmResponse.Text := WCFRest.Get('GetMemberByName');
     mmRequest.Text := WCFRest.RequestText;
   finally
-    params.Free;
     WCFRest.Free;
   end;
 end;
@@ -123,15 +131,47 @@ begin
   WCFRest := TWCFRest.Create(edURL.Text);
   Json := TJSONObject.Create;
   try
-    Json.AddPair('FirstName', edFirst.Text);
-    Json.AddPair('MiddleName', edMiddle.Text);
-    Json.AddPair('LastName', edLast.Text);
-    Json.AddPair('Age', edAge.Text);
-    mmResponse.Text := WCFRest.Post('AddMember', Json.ToJSON).ToString;
+    WCFRest.Body.Add('FirstName', edFirst.Text);
+    WCFRest.Body.Add('MiddleName', edMiddle.Text);
+    WCFRest.Body.Add('LastName', edLast.Text);
+    WCFRest.Body.Add('Age', edAge.Text);
+    mmResponse.Text := WCFRest.Post('AddMember').ToString;
     mmRequest.Text := WCFRest.RequestText;
   finally
     WCFRest.Free;
   end;
 end;
+
+procedure TForm1.btnPutClick(Sender: TObject);
+var
+  Json: TJSONObject;
+begin
+  WCFRest := TWCFRest.Create(edURL.Text);
+  try
+    WCFRest.Body.Add('ID', edPutId.Text);
+    WCFRest.Body.Add('FirstName', edPutFName.Text);
+    WCFRest.Body.Add('MiddleName', edPutMName.Text);
+    WCFRest.Body.Add('LastName', edPutLName.Text);
+    WCFRest.Body.Add('Age', edPutAge.Text);
+    mmResponse.Text := WCFRest.Put('UpdateMember').ToString;
+    mmRequest.Text := WCFRest.RequestText;
+  finally
+    WCFRest.Free;
+  end;
+end;
+
+procedure TForm1.btnDelClick(Sender: TObject);
+begin
+  WCFRest := TWCFRest.Create(edURL.Text);
+  try
+    WCFRest.Params.Add('id', edDelID.Text);
+    mmResponse.Text := WCFRest.Delete('DeleteMember');
+    mmRequest.Text := WCFRest.RequestText;
+  finally
+    WCFRest.Free;
+  end;
+end;
+
+
 
 end.

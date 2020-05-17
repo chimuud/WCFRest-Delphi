@@ -8,8 +8,8 @@
     <Property Name="FirstName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="MiddleName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
     <Property Name="LastName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Age" Type="String" Nullable="true" />
-    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" a:GetterAccess="Private" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Private" />
+    <Property Name="Age" Type="String" Nullable="true" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" a:GetterAccess="Public" xmlns:a="http://schemas.microsoft.com/ado/2006/04/codegeneration" a:SetterAccess="Public" />
   </EntityType>
   <EntityContainer Name="FamilyEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Members" EntityType="Self.Member" />

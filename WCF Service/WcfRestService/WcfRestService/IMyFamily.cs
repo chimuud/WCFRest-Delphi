@@ -7,6 +7,7 @@ using System.Linq.Expressions;
 using System.Net;
 using System.Runtime.Serialization;
 using System.ServiceModel;
+using System.ServiceModel.Activation;
 using System.ServiceModel.Web;
 using System.Text;
 
@@ -34,5 +35,13 @@ namespace WcfRestService
         [OperationContract]
         [WebInvoke(RequestFormat = WebMessageFormat.Json, Method = "POST", ResponseFormat = WebMessageFormat.Json)]
         int AddMember();
+
+        [OperationContract]
+        [WebInvoke(RequestFormat = WebMessageFormat.Json, Method = "PUT", ResponseFormat = WebMessageFormat.Json)]
+        int UpdateMember();
+
+        [OperationContract]
+        [WebInvoke(Method = "DELETE")]
+        int DeleteMember(string id);
     }
 }

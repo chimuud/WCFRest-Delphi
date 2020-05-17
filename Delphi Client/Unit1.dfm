@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 434
+  ClientHeight = 620
   ClientWidth = 844
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -14,9 +14,9 @@ object Form1: TForm1
   PixelsPerInch = 96
   TextHeight = 13
   object Splitter2: TSplitter
-    Left = 523
+    Left = 561
     Top = 0
-    Height = 434
+    Height = 620
     ExplicitLeft = 304
     ExplicitTop = 112
     ExplicitHeight = 100
@@ -24,14 +24,14 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 523
-    Height = 434
+    Width = 561
+    Height = 620
     Align = alLeft
     TabOrder = 0
-    ExplicitLeft = -1
+    ExplicitHeight = 534
     DesignSize = (
-      523
-      434)
+      561
+      620)
     object Label2: TLabel
       Left = 24
       Top = 26
@@ -42,11 +42,12 @@ object Form1: TForm1
     object edURL: TEdit
       Left = 24
       Top = 45
-      Width = 467
+      Width = 505
       Height = 21
       Anchors = [akLeft, akTop, akRight]
       TabOrder = 0
       Text = 'http://localhost:50068/MyFamily.svc'
+      ExplicitWidth = 467
     end
     object GroupBox1: TGroupBox
       Left = 152
@@ -102,7 +103,7 @@ object Form1: TForm1
     object GroupBox3: TGroupBox
       Left = 24
       Top = 232
-      Width = 204
+      Width = 225
       Height = 129
       Caption = 'GetMemberByName'
       TabOrder = 3
@@ -145,11 +146,11 @@ object Form1: TForm1
       end
     end
     object GroupBox4: TGroupBox
-      Left = 256
+      Left = 255
       Top = 232
       Width = 225
       Height = 185
-      Caption = 'GroupBox4'
+      Caption = 'AddMember'
       TabOrder = 4
       object Label7: TLabel
         Left = 24
@@ -217,18 +218,140 @@ object Form1: TForm1
         OnClick = btnPostClick
       end
     end
+    object GroupBox5: TGroupBox
+      Left = 24
+      Top = 367
+      Width = 225
+      Height = 210
+      Caption = 'UpdateMember'
+      TabOrder = 5
+      object Label11: TLabel
+        Left = 17
+        Top = 60
+        Width = 51
+        Height = 13
+        Caption = 'First Name'
+      end
+      object Label12: TLabel
+        Left = 8
+        Top = 87
+        Width = 60
+        Height = 13
+        Caption = 'Middle Name'
+      end
+      object Label13: TLabel
+        Left = 18
+        Top = 114
+        Width = 50
+        Height = 13
+        Caption = 'Last Name'
+      end
+      object Label14: TLabel
+        Left = 50
+        Top = 141
+        Width = 19
+        Height = 13
+        Caption = 'Age'
+      end
+      object Label15: TLabel
+        Left = 56
+        Top = 33
+        Width = 11
+        Height = 13
+        Caption = 'ID'
+      end
+      object edPutFName: TEdit
+        Left = 74
+        Top = 57
+        Width = 121
+        Height = 21
+        TabOrder = 0
+      end
+      object edPutMName: TEdit
+        Left = 74
+        Top = 84
+        Width = 121
+        Height = 21
+        TabOrder = 1
+      end
+      object edPutLName: TEdit
+        Left = 74
+        Top = 111
+        Width = 121
+        Height = 21
+        TabOrder = 2
+      end
+      object edPutAge: TEdit
+        Left = 75
+        Top = 138
+        Width = 120
+        Height = 21
+        TabOrder = 3
+      end
+      object btnPut: TButton
+        Left = 73
+        Top = 165
+        Width = 75
+        Height = 25
+        Caption = 'PUT'
+        TabOrder = 4
+        OnClick = btnPutClick
+      end
+      object edPutID: TEdit
+        Left = 73
+        Top = 30
+        Width = 121
+        Height = 21
+        TabOrder = 5
+      end
+    end
+    object GroupBox6: TGroupBox
+      Left = 255
+      Top = 423
+      Width = 225
+      Height = 154
+      Caption = 'DeleteMember'
+      TabOrder = 6
+      object Label16: TLabel
+        Left = 44
+        Top = 54
+        Width = 11
+        Height = 13
+        Caption = 'ID'
+      end
+      object edDelID: TEdit
+        Left = 61
+        Top = 51
+        Width = 121
+        Height = 21
+        TabOrder = 0
+        Text = '0'
+      end
+      object btnDel: TButton
+        Left = 61
+        Top = 78
+        Width = 75
+        Height = 25
+        Caption = 'DELETE'
+        TabOrder = 1
+        OnClick = btnDelClick
+      end
+    end
   end
   object Panel2: TPanel
-    Left = 526
+    Left = 564
     Top = 0
-    Width = 318
-    Height = 434
+    Width = 280
+    Height = 620
     Align = alClient
     TabOrder = 1
+    ExplicitLeft = 526
+    ExplicitWidth = 318
+    ExplicitHeight = 434
     object Splitter1: TSplitter
       Left = 1
       Top = 157
-      Width = 316
+      Width = 278
       Height = 3
       Cursor = crVSplit
       Align = alTop
@@ -238,15 +361,16 @@ object Form1: TForm1
     object Panel3: TPanel
       Left = 1
       Top = 1
-      Width = 316
+      Width = 278
       Height = 156
       Align = alTop
       TabOrder = 0
+      ExplicitWidth = 316
       object Label3: TLabel
         AlignWithMargins = True
         Left = 4
         Top = 4
-        Width = 308
+        Width = 270
         Height = 13
         Align = alTop
         Caption = 'Request'
@@ -255,26 +379,27 @@ object Form1: TForm1
       object mmRequest: TMemo
         Left = 1
         Top = 20
-        Width = 314
+        Width = 276
         Height = 135
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 2
-        ExplicitTop = 22
+        ExplicitWidth = 314
       end
     end
     object Panel4: TPanel
       Left = 1
       Top = 160
-      Width = 316
-      Height = 273
+      Width = 278
+      Height = 459
       Align = alClient
       TabOrder = 1
+      ExplicitWidth = 316
+      ExplicitHeight = 273
       object Label4: TLabel
         AlignWithMargins = True
         Left = 4
         Top = 4
-        Width = 308
+        Width = 270
         Height = 13
         Align = alTop
         Caption = 'Response'
@@ -283,12 +408,12 @@ object Form1: TForm1
       object mmResponse: TMemo
         Left = 1
         Top = 20
-        Width = 314
-        Height = 252
+        Width = 276
+        Height = 438
         Align = alClient
         TabOrder = 0
-        ExplicitLeft = 2
-        ExplicitTop = 23
+        ExplicitWidth = 314
+        ExplicitHeight = 252
       end
     end
   end
